@@ -71,39 +71,40 @@ def diagnose():
 
         possible_diag = possible_results(U, V)
         if len(possible_diag) > 0:
-            outputMessage += "Possible problems ("+U+", "+V+"):"
+            outputMessage += "Possible problems ("+U+", "+V+"):"+"\n"
             print("Possible problems ("+U+", "+V+"):")
             for diag in possible_diag:
-                outputMessage += "\t"+diag
+                outputMessage += "\t"+diag+"\n"
                 print("\t"+diag)
 
         possible_diag = possible_results(U, W)
         if len(possible_diag) > 0:
-            outputMessage += "Possible problems ("+U+", "+W+"):"
+            outputMessage += "Possible problems ("+U+", "+W+"):"+"\n"
             print("Possible problems ("+U+", "+W+"):")
             for diag in possible_diag:
-                outputMessage += "\t"+diag
+                outputMessage += "\t"+diag+"\n"
                 print("\t"+diag)
 
         possible_diag = possible_results(V, W)
         if len(possible_diag) > 0:
-            outputMessage += "Possible problems ("+V+", "+W+"):"
+            outputMessage += "Possible problems ("+V+", "+W+"):"+"\n"
             print("Possible problems ("+V+", "+W+"):")
             for diag in possible_diag:
-                outputMessage += "\t"+diag
+                outputMessage += "\t"+diag+"\n"
                 print("\t"+diag)
 
     elif len(filtered_diag) == 1:
-        outputMessage += "Exact problem found: "+filtered_diag[0]
+        outputMessage += "Exact problem found: "+filtered_diag[0]+"\n"
         print("Exact problem found: "+filtered_diag[0])
         
     else:
         outputMessage += "Not enough data provided.\n"
         print("Not enough data provided.\n")
 
+        outputMessage += "Possible problems:\n"+"\n"
         print("Possible problems:")
         for problem in filtered_diag:
-            outputMessage += problem
+            outputMessage += problem+"\n"
             print(problem)
 
     text_field.insert(END, outputMessage)
